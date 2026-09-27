@@ -1,0 +1,32 @@
+meta:
+  name: "Custom Brand"
+  link:
+    home: "https://www.yourwebsite.com"
+    linkedin: "https://www.linkedin.com/in/yourname"
+
+logo:
+  small: "man/figures/logo.png"
+
+color:
+  palette:
+    primary: "#2B5C8F"    # Deep Slate Blue
+    secondary: "#E69F00"  # Amber Gold
+    teal: "#009E73"       # Teal Green
+    sky: "#56B4E9"        # Sky Blue
+    purple: "#CC79A7"     # Muted Purple
+    neutral-light: "#FAFAFA" # Background Off-White
+    neutral-dark: "#111111"  # Near Black Title Text
+    grid: "#E0E0E0"          # Grid Line Gray
+
+typography:
+  fonts:
+    - family: "Inter"
+      source: google
+  headings:
+    family: "Inter"
+    weight: 700
+    color: "#111111"
+  body:
+    family: "Inter"
+    weight: 400
+    color: "#333333"

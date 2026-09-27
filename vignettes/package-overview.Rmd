@@ -1,0 +1,91 @@
+---
+title: "Package Overview & Data Wrangling Demo"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Package Overview & Data Wrangling Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message = FALSE, warning = FALSE}
+library(ggplot2)
+library(dplyr)
+library(palmerpenguins)
+devtools::load_all()
+```
+
+
+## 1. Helper Function Demonstration: `calculate_shares()`
+
+Our custom helper function `calculate_shares()` rapidly aggregates categorical data and calculates percentage shares.
+
+```{r helper-demo}
+penguins %>% 
+  calculate_shares(species)
+```
+
+## 2. Demonstrating the 5 Required Data Moves
+
+### Step 2.1: `filter` & `mutate`
+```{r move-filter-mutate}
+penguins_clean <- penguins %>%
+  filter(!is.na(body_mass_g), !is.na(sex)) %>%
+  mutate(body_mass_kg = body_mass_g / 1000)
+```
+
+### Step 2.2: `group_by` & `summarise`
+```{r move-groupby-summarise}
+species_summary <- penguins_clean %>%
+  group_by(species, island) %>%
+  summarise(
+    avg_mass_kg = round(mean(body_mass_kg), 2),
+    avg_bill_len = round(mean(bill_length_mm), 2),
+    count = n(),
+    .groups = "drop"
+  )
+```
+
+### Step 2.3: `join`
+```{r move-join}
+island_info <- tibble::tibble(
+  island = c("Biscoe", "Dream", "Torgersen"),
+  archipelago = c("Palmer Archipelago", "Palmer Archipelago", "Palmer Archipelago")
+)
+
+penguins_joined <- species_summary %>%
+  left_join(island_info, by = "island")
+```
+
+### Step 2.4: `arrange`
+```{r move-arrange}
+penguins_final <- penguins_joined %>%
+  arrange(desc(avg_mass_kg))
+
+penguins_final
+```
+
+## 3. Custom Theme Demonstration: `theme_custom()`
+
+```{r theme-demo, fig.width=7, fig.height=4.5}
+brand_colors <- c("#2B5C8F", "#E69F00", "#009E73")
+
+ggplot(penguins_final, aes(x = reorder(species, -avg_mass_kg), y = avg_mass_kg, fill = species)) +
+  geom_col(width = 0.6) +
+  scale_fill_manual(values = brand_colors) +
+  labs(
+    title = "Average Penguin Body Mass by Species",
+    subtitle = "Clean layout styled with theme_custom()",
+    x = "Penguin Species",
+    y = "Average Body Mass (kg)",
+    caption = "Data: palmerpenguins package | [www.yourwebsite.com](https://www.yourwebsite.com)"
+  ) +
+  theme_custom()
+```
