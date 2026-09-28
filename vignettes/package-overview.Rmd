@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 library(ggplot2)
 library(dplyr)
 library(palmerpenguins)
-devtools::load_all()
+library(sctheme)
 ```
 
 
@@ -75,7 +75,11 @@ penguins_final
 ## 3. Custom Theme Demonstration: `theme_custom()`
 
 ```{r theme-demo, fig.width=7, fig.height=4.5}
-brand_colors <- c("#2B5C8F", "#E69F00", "#009E73")
+brand_colors <- c(
+  "#2B5C8F",
+  "#8C7AA9",
+  "#C47C86"
+)
 
 ggplot(penguins_final, aes(x = reorder(species, -avg_mass_kg), y = avg_mass_kg, fill = species)) +
   geom_col(width = 0.6) +
@@ -85,7 +89,7 @@ ggplot(penguins_final, aes(x = reorder(species, -avg_mass_kg), y = avg_mass_kg, 
     subtitle = "Clean layout styled with theme_custom()",
     x = "Penguin Species",
     y = "Average Body Mass (kg)",
-    caption = "Data: palmerpenguins package | [www.yourwebsite.com](https://www.yourwebsite.com)"
+    caption = "Data: palmerpenguins package"
   ) +
   theme_custom()
 ```

@@ -1,22 +1,19 @@
 meta:
-  name: "Custom Brand"
-  link:
-    home: "https://www.yourwebsite.com"
-    linkedin: "https://www.linkedin.com/in/yourname"
+  name: "sctheme"
 
 logo:
   small: "man/figures/logo.png"
 
 color:
   palette:
-    primary: "#2B5C8F"    # Deep Slate Blue
-    secondary: "#E69F00"  # Amber Gold
-    teal: "#009E73"       # Teal Green
-    sky: "#56B4E9"        # Sky Blue
-    purple: "#CC79A7"     # Muted Purple
-    neutral-light: "#FAFAFA" # Background Off-White
-    neutral-dark: "#111111"  # Near Black Title Text
-    grid: "#E0E0E0"          # Grid Line Gray
+    blue: "#2B5C8F"
+    lavender: "#8C7AA9"
+    rose: "#C47C86"
+    off-white: "#F8F7F5"
+    dark-navy: "#1E2933"
+
+  foreground: dark-navy
+  background: off-white
 
 typography:
   fonts:

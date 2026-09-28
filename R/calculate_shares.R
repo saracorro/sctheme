@@ -1,24 +1,21 @@
-#' Calculate Category Counts and Percentage Shares
+utils::globalVariables("n")
+
+#' Calculate Shares
 #'
-#' Takes a data frame and grouping variable(s), counts the frequency of each group,
-#' and calculates the proportion/percentage share.
+#' Counts observations by the supplied grouping variables and calculates
+#' the percentage represented by each group.
 #'
-#' @param data A data frame or tibble
-#' @param ... Unquoted column name(s) to group and aggregate by
+#' @param data A data frame.
+#' @param ... Variables to group by.
 #'
-#' @return A summarized tibble with columns `n` (counts) and `percent` (percentage of total)
+#' @return A data frame containing the group counts and percentages.
+#'
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#' library(dplyr)
-#' calculate_shares(mpg, class)
-#' }
 calculate_shares <- function(data, ...) {
-  data %>%
-    dplyr::count(...) %>%
+  data |>
+    dplyr::count(...) |>
     dplyr::mutate(
       percent = round((n / sum(n)) * 100, 1)
-    ) %>%
+    ) |>
     dplyr::arrange(dplyr::desc(n))
 }

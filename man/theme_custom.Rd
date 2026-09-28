@@ -2,19 +2,18 @@
 % Please edit documentation in R/theme_custom.R
 \name{theme_custom}
 \alias{theme_custom}
-\title{Custom Brand ggplot2 Theme}
+\title{Custom ggplot2 Theme}
 \usage{
 theme_custom(base_size = 11, base_family = "Inter")
 }
 \arguments{
-\item{base_size}{Base font size in points (default: 11)}
+\item{base_size}{Base font size in points. Default is 11.}
 
-\item{base_family}{Base font family (default: "Inter")}
+\item{base_family}{Base font family. Default is "Inter".}
 }
 \value{
-A ggplot2 theme object
+A ggplot2 theme object.
 }
 \description{
-A custom ggplot2 theme featuring a soft off-white canvas, clean grid lines,
-and Inter typography.
+Inter typography, a soft off-white background, and subtle gridlines.
 }

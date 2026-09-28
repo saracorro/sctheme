@@ -1,6 +1,6 @@
-# Custom Brand R Package
+# sctheme
 
-The **Custom Brand** package provides a standardized design system for data analysis and visualization. It includes a custom `ggplot2` theme and helper functions that make it easier to create consistent, professional, and accessible visualizations.
+The **sctheme** package provides a custom visual style for data analysis and visualization. It includes a custom `ggplot2` theme and data-wrangling helper functions designed to create consistent, professional, and visually cohesive graphics.
 
 ---
 
@@ -13,13 +13,13 @@ You can install the development version of this package directly from GitHub usi
 install.packages("devtools")
 
 # Install the package from GitHub
-devtools::install_github("saracorro/your-repo-name")
+devtools::install_github("saracorro/sctheme")
 ```
 
 After installing the package, load it with:
 
 ```r
-library(CustomBrand)
+library(sctheme)
 ```
 
 ---
@@ -33,7 +33,7 @@ The `calculate_shares()` function provides a quick way to summarize a categorica
 For example:
 
 ```r
-library(CustomBrand)
+library(sctheme)
 library(dplyr)
 library(palmerpenguins)
 
@@ -65,12 +65,12 @@ ggplot(
   )
 ) +
   geom_point(size = 2.5, alpha = 0.8) +
-  scale_color_manual(
-    values = c(
-      "#2B5C8F",
-      "#E69F00",
-      "#009E73"
-    )
+ scale_color_manual(
+  values = c(
+    "#2B5C8F",
+    "#8C7AA9",
+    "#C47C86"
+)
   ) +
   labs(
     title = "Penguin Bill Length vs. Body Mass",
@@ -104,11 +104,13 @@ This creates a clean and consistent visual identity across different graphics.
 
 The package uses three primary accent colors:
 
-| Color      | Hex Code  | Purpose                    |
-| ---------- | --------- | -------------------------- |
-| Slate Blue | `#2B5C8F` | Primary brand/accent color |
-| Amber Gold | `#E69F00` | Secondary accent           |
-| Teal Green | `#009E73` | Secondary accent           |
+| Color | Hex Code | Purpose |
+|---|---|---|
+| Blue | `#2B5C8F` | Primary brand color |
+| Lavender | `#8C7AA9` | Secondary accent |
+| Dusty Rose | `#C47C86` | Secondary accent |
+| Off-white | `#F8F7F5` | Background |
+| Dark Navy | `#1E2933` | Primary text |
 
 The palette was chosen to create visual distinction between categories while maintaining a professional and consistent appearance.
 
@@ -118,18 +120,15 @@ The primary blue, `#2B5C8F`, provides strong contrast against the package's ligh
 
 The theme uses:
 
-* **Off-white background:** `#FAFAFA`
-* **Light gridlines:** `#E0E0E0`
-* **Dark text:** `#111111`
+The theme uses a soft off-white background (#F8F7F5) to create a clean and comfortable visual appearance while avoiding the starkness of a pure white background. The background allows the primary blue (#2B5C8F), lavender (#8C7AA9), and dusty rose (#C47C86) accents to stand out clearly.
 
-The off-white background reduces the harshness of a pure white background while maintaining a clean appearance. The light gray gridlines provide useful reference points without competing with the data.
+Gridlines use a light neutral color (#DDD9E0) and are kept subtle so they provide useful reference points without competing with the data. Minor gridlines are removed to reduce visual clutter and keep the overall design clean.
+
+This combination creates a consistent visual hierarchy where the data remains the primary focus, while the background and gridlines provide structure without overwhelming the visualization.
+
 
 ### Accessibility
 
-Accessibility was considered when selecting the package's colors and typography.
+Accessibility was considered when developing the package's visual design. The palette uses distinct colors for visual differentiation while maintaining strong contrast between text and the light background.
 
-The color palette was evaluated using color-contrast and color-blindness simulation tools. The blue, amber, and teal accents were selected because they provide meaningful visual differences between categories and are intended to remain distinguishable for users with common forms of color vision deficiency, including protanopia and deuteranopia.
-
-Color is also not intended to be the only source of information in the visualizations. Clear labels, titles, axes, and legends provide additional ways for users to interpret the data.
-
-Overall, the design aims to balance a consistent visual identity with readability, contrast, and accessibility.
+Color is not intended to be the only source of information in visualizations. Titles, axis labels, legends, and other textual elements provide additional context so that information can still be interpreted without relying solely on color.

@@ -2,25 +2,19 @@
 % Please edit documentation in R/calculate_shares.R
 \name{calculate_shares}
 \alias{calculate_shares}
-\title{Calculate Category Counts and Percentage Shares}
+\title{Calculate Shares}
 \usage{
 calculate_shares(data, ...)
 }
 \arguments{
-\item{data}{A data frame or tibble}
+\item{data}{A data frame.}
 
-\item{...}{Unquoted column name(s) to group and aggregate by}
+\item{...}{Variables to group by.}
 }
 \value{
-A summarized tibble with columns \code{n} (counts) and \code{percent} (percentage of total)
+A data frame containing the group counts and percentages.
 }
 \description{
-Takes a data frame and grouping variable(s), counts the frequency of each group,
-and calculates the proportion/percentage share.
-}
-\examples{
-\dontrun{
-library(dplyr)
-calculate_shares(mpg, class)
-}
+Counts observations by the supplied grouping variables and calculates
+the percentage represented by each group.
 }

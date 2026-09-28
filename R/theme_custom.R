@@ -1,59 +1,48 @@
-#' Custom Brand ggplot2 Theme
+#' Custom ggplot2 Theme
 #'
-#' A custom ggplot2 theme featuring a soft off-white canvas, clean grid lines,
-#' and Inter typography.
+#' Inter typography, a soft off-white background, and subtle gridlines.
 #'
-#' @param base_size Base font size in points (default: 11)
-#' @param base_family Base font family (default: "Inter")
+#' @param base_size Base font size in points. Default is 11.
+#' @param base_family Base font family. Default is "Inter".
 #'
-#' @return A ggplot2 theme object
+#' @return A ggplot2 theme object.
+#'
 #' @export
 theme_custom <- function(base_size = 11, base_family = "Inter") {
+
   ggplot2::theme_minimal(
     base_size = base_size,
     base_family = base_family
-  ) %+replace%
+  ) +
     ggplot2::theme(
-      # Backgrounds
-      plot.background = ggplot2::element_rect(fill = "#FAFAFA", color = NA),
-      panel.background = ggplot2::element_rect(fill = "#FAFAFA", color = NA),
-
-      # Grid Lines
-      panel.grid.major = ggplot2::element_line(color = "#E0E0E0", linetype = "dashed", linewidth = 0.3),
+      plot.background = ggplot2::element_rect(
+        fill = "#F8F7F5",
+        color = NA
+      ),
+      panel.background = ggplot2::element_rect(
+        fill = "#F8F7F5",
+        color = NA
+      ),
+      panel.grid.major = ggplot2::element_line(
+        color = "#DDD9E0",
+        linewidth = 0.4
+      ),
       panel.grid.minor = ggplot2::element_blank(),
-
-      # Text Hierarchy & Sizing
       plot.title = ggplot2::element_text(
-        size = 18,
-        face = "bold",
-        color = "#111111",
-        margin = ggplot2::margin(b = 8)
+        color = "#1E2933",
+        face = "bold"
       ),
       plot.subtitle = ggplot2::element_text(
-        size = 13,
-        face = "plain",
-        color = "#555555",
-        margin = ggplot2::margin(b = 12)
+        color = "#4B5563"
       ),
       axis.title = ggplot2::element_text(
-        size = 11,
-        face = "bold",
-        color = "#333333"
+        color = "#1E2933"
       ),
       axis.text = ggplot2::element_text(
-        size = 9,
-        color = "#555555"
+        color = "#4B5563"
       ),
-      plot.caption = ggplot2::element_text(
-        size = 8,
-        face = "italic",
-        color = "#777777",
-        margin = ggplot2::margin(t = 10),
-        hjust = 0
-      ),
-
-      # Title & Caption Alignment
-      plot.title.position = "plot",
-      plot.caption.position = "plot"
+      legend.text = ggplot2::element_text(
+        color = "#4B5563"
+      )
     )
 }
