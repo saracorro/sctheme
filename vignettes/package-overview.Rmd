@@ -90,6 +90,7 @@ ggplot(penguins_final, aes(x = reorder(species, -avg_mass_kg), y = avg_mass_kg, 
     x = "Penguin Species",
     y = "Average Body Mass (kg)",
     caption = "Data: palmerpenguins package"
-  ) +
-  theme_custom()
+  ) + 
+  theme_custom() + 
+  theme(legend.position = "none")
 ```

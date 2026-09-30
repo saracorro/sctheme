@@ -1,6 +1,5 @@
 #' Custom ggplot2 Theme
 #'
-#' Inter typography, a soft off-white background, and subtle gridlines.
 #'
 #' @param base_size Base font size in points. Default is 11.
 #' @param base_family Base font family. Default is "Inter".
