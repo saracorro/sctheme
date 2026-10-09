@@ -15,5 +15,5 @@ theme_custom(base_size = 11, base_family = "Inter")
 A ggplot2 theme object.
 }
 \description{
-Inter typography, a soft off-white background, and subtle gridlines.
+Custom ggplot2 Theme
 }

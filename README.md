@@ -52,7 +52,7 @@ The `theme_custom()` function provides a consistent visual style for `ggplot2` g
 Example:
 
 ```r
-library(CustomBrand)
+library(sctheme)
 library(ggplot2)
 library(palmerpenguins)
 
@@ -114,11 +114,9 @@ The package uses three primary accent colors:
 
 The palette was chosen to create visual distinction between categories while maintaining a professional and consistent appearance.
 
-The primary blue, `#2B5C8F`, provides strong contrast against the package's light background, `#FAFAFA`, making it suitable for important visual elements.
+The primary blue, `#2B5C8F`, provides strong contrast against the package's light background, `#F8F7F5`, making it suitable for important visual elements.
 
 ### Background and Gridlines
-
-The theme uses:
 
 The theme uses a soft off-white background (#F8F7F5) to create a clean and comfortable visual appearance while avoiding the starkness of a pure white background. The background allows the primary blue (#2B5C8F), lavender (#8C7AA9), and dusty rose (#C47C86) accents to stand out clearly.
 
