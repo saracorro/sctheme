@@ -45,9 +45,9 @@ This produces a summary showing each penguin species, its count, and its percent
 
 ---
 
-### 2. Custom Visualization Theme: `theme_custom()`
+### 2. Custom Visualization Theme: `sctheme()`
 
-The `theme_custom()` function provides a consistent visual style for `ggplot2` graphics. The theme uses a clean, minimalist design with an off-white background, subtle gridlines, and a clear title hierarchy.
+The `sctheme()` function provides a consistent visual style for `ggplot2` graphics. The theme uses a clean, minimalist design with an off-white background, subtle gridlines, and a clear title hierarchy.
 
 Example:
 
@@ -64,22 +64,14 @@ ggplot(
     color = species
   )
 ) +
-  geom_point(size = 2.5, alpha = 0.8) +
- scale_color_manual(
-  values = c(
-    "#2B5C8F",
-    "#8C7AA9",
-    "#C47C86"
-)
-  ) +
   labs(
     title = "Penguin Bill Length vs. Body Mass",
-    subtitle = "Styled with theme_custom()",
+    subtitle = "Styled with sctheme()",
     x = "Bill Length (mm)",
     y = "Body Mass (g)",
     caption = "Data: palmerpenguins"
   ) +
-  theme_custom()
+  sctheme()
 ```
 
 The resulting visualization uses the package's custom branding while maintaining the functionality of `ggplot2`.
