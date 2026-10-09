@@ -28,7 +28,7 @@ library(sctheme)
 
 ### 1. Data Wrangling Helper: `calculate_shares()`
 
-The `calculate_shares()` function provides a quick way to summarize a categorical variable by calculating the number of observations and the percentage share of each category.
+The `calculate_shares()` function provides a quick way to summarize a categorical variable by calculating the number of observations and the percentage share of each category. This is something that we are constantly trying to do in class, so hopefully this function will simplify that.
 
 For example:
 

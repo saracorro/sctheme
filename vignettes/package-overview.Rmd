@@ -32,6 +32,7 @@ penguins %>%
   calculate_shares(species)
 ```
 
+
 ## 2. Demonstrating the 5 Data Moves
 
 ### Step 2.1: `filter` & `mutate`
