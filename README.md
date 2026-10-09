@@ -82,7 +82,7 @@ The resulting visualization uses the package's custom branding while maintaining
 
 ### Typography
 
-The package uses **Inter** as its primary font. Inter was selected because it is a modern sans-serif typeface designed for readability across both digital and print applications.
+The package uses **Inter** as its primary font. I choose Inter because it is a modern typeface designed for readability.
 
 The typography also establishes a clear visual hierarchy:
 
@@ -104,7 +104,7 @@ The package uses three primary accent colors:
 | Off-white | `#F8F7F5` | Background |
 | Dark Navy | `#1E2933` | Primary text |
 
-The palette was chosen to create visual distinction between categories while maintaining a professional and consistent appearance.
+The palette was chosen to create visual distinction between categories while maintaining a professional and consistent appearance. I found these colors to be appealing, but also easy to see.
 
 The primary blue, `#2B5C8F`, provides strong contrast against the package's light background, `#F8F7F5`, making it suitable for important visual elements.
 
